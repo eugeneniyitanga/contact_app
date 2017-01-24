@@ -1,0 +1,20 @@
+<title> Registered Contacts </title>
+
+<table>
+  <tr>
+     <th>First Name </th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+  </tr>
+    <tr>
+    <td><%= @contact.first_name %></td>
+    <td><%= @contact.last_name %></td>
+    <td><%= @contact.email %></td>
+    <td><%= @contact.phone_number %></td>
+  </tr>
+</table>
+
+<%= form_tag "/contacts/#{@contact.id}", method: :delete do %>
+  <input type="submit" value="Remove Contact">
+<% end %>
