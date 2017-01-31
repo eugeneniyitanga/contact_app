@@ -2,27 +2,32 @@
 
 <%= form_tag "/contacts", method: :post do %>
    <div>
-     First Name: <input type="text" name="first_name"><br>
+     First Name: <br><input type="text" name="first_name"><br>
    </div>
    <br>
       <div>
-     Middle Name: <input type="text" name="middle_name"><br>
+     Middle Name: <br><input type="text" name="middle_name"><br>
    </div>
    <br>
    <div>
-      Last Name: <input type="text" name="last_name"><br>
+      Last Name: <br><input type="text" name="last_name"><br>
    </div>
    <br>
    <div>
-      Email: <input type="text" name="email"><br>
+      Email: <br><input type="text" name="email"><br>
    </div>
    <br>
    <div>
-      Phone Number: <input type="text" name="phone_number"><br>
+      Phone Number: <br><input type="text" name="phone_number"><br>
    </div>
    <br>
       <div>
-      Bio: <input type="text" name="bio"><br>
+      <br>Bio:<br>
+      <textarea name="bio" rows="10" cols="30"></textarea>
+   </div>
+   <br>
+   <div>
+     Address: <br><input type="text" name="address"><br>
    </div>
    <br>
    <div>

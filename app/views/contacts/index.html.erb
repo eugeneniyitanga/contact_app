@@ -1,23 +1,61 @@
-<h1> Registered Contacts </h1>
+<!-- <h1> Registered Contacts </h1>
  
-<table class="table table-hover">
+<table class="table table-bordered">
   <tr>
-      <th>First Name</th>
-      <th>Middle Name</th>
+      <th> First Name</th>
+      <br>
+      <th> Middle Name</th>
+      <br>
       <th> Last Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Bio</th>
+      <br>
+      <th> Email</th>
+      <br>
+      <th> Phone Number</th>
+      <br>
+      <th> Bio</th>
+      <br>
   </tr>
   <br>
     <% @contacts.each do |contact| %>
     <tr>
-    <td><%= contact.first_name %></td>
-    <td> <%= contact.middle_name%></td>
-    <td><%= contact.last_name %></td>
-    <td><%= contact.email %></td>
-    <td><%= contact.phone_number %></td>
-    <td><%= contact.bio %></td>
+    <td><%=contact.first_name%></td>
+    <br>
+    <td><%=contact.middle_name%></td>
+    <br>
+    <td><%=contact.last_name%></td>
+    <br>
+    <td><%=contact.email%></td>
+    <br>
+    <td><%=contact.phone_number%></td>
+    <br>
+    <td><%=contact.bio%></td>
+    <br>
   </tr>
   <% end %>
+</table> -->
+
+<h1>All Contacts</h1>
+
+  <div class="row">
+  <% @contacts.each_slice(2) do |two_contacts| %>
+    <div class="row">
+      <% two_contacts.each do |contact| %>
+      <div class="col-md-6">
+        <td><br>First Name: <a href="/contacts/<%= contact.id %>"><%= contact.first_name %></a></td>
+        <br>
+       <!--  <h2>First Name: <%= contact.first_name %></h2>  -->
+        <td><br>Last Name: <%= contact.last_name %><br></td>
+        <br>
+        <td><br>Email: <%= contact.email %><br></td>
+        <br>
+        <td><br>Phone Number: <%= contact.phone_number %><br></td>
+        <br>
+        <td><br>Bio: <%= contact.bio %><br></td>
+      </div>
+      <% end %> 
+    </div>
+    <% end %> 
+  </div>
 </table>
+
+

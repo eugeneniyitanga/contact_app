@@ -10,6 +10,10 @@
   </div>
   <br>
   <div>
+    Middle Name: <input type="text" name="middle_name" value="<%= @contact.middle_name %>">
+  </div>
+  <br>
+  <div>
     Last Name: <input type="text" name="last_name" value="<%= @contact.last_name %>">
   </div>
  <br>
@@ -20,6 +24,10 @@
   <div>
     Phone Number: <input type="text" name="phone_number" value="<%= @contact.phone_number %>">
   </div>
+  <div>
+      <br>Bio:<br>
+      <textarea name="bio" rows="10" cols="30"></textarea>
+   </div>
  <br>
   <div>
     <input type="submit" value="Update Contact">

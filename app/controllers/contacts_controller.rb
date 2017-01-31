@@ -2,9 +2,9 @@ class ContactsController < ApplicationController
 
   
   def index 
-    @contacts = Contact.all 
+    @contacts = Contact.all
     render "index.html.erb"
-  end 
+  end  
 
   def show 
     @contact = Contact.find_by(id: params[:id])
@@ -12,6 +12,15 @@ class ContactsController < ApplicationController
   end 
 
   def new 
+  end 
+
+  def search 
+    search_input = params[:search_input]
+    @contacts = Contact.where("phone_number LIKE ?", "%#{search_input}%",)
+    if @contacts.empty?
+      flash[:info] = "No search found" 
+    end 
+    render :index
   end 
 
   def create 
@@ -43,5 +52,5 @@ class ContactsController < ApplicationController
     @contact.email = params[:email]
     @contact.phone_number = params[:phone_number]
     @contact.save  
-  end   
+  end  
 end
