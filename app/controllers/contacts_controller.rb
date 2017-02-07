@@ -16,9 +16,9 @@ class ContactsController < ApplicationController
 
   def search 
     search_input = params[:search_input]
-    @contacts = Contact.where("phone_number LIKE ?", "%#{search_input}%",)
+    @contacts = Contact.where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search_input}%",)
     if @contacts.empty?
-      flash[:info] = "No search found" 
+      flash[:info] = "No contact found" 
     end 
     render :index
   end 
